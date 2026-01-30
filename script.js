@@ -6,7 +6,7 @@ function playMusic() {
 window.addEventListener('DOMContentLoaded', function() {
   playMusic();
 });
-document.body.addEventListener('click', playMusic, { once: true });
+
 const content = document.getElementById('content');
 const footer = document.getElementsByTagName('footer')[0];
 const timer = document.getElementById('timer');
@@ -15,12 +15,12 @@ const second = 1000,
   minute = second * 60,
   hour = minute * 60,
   day = hour * 24;
-let countDown = new Date('Oct 22, 2023 00:00:00').getTime(),
+let countDown = new Date('Jan 29, 2026 24:00:00').getTime(),
   x = setInterval(function () {
     let now = new Date().getTime(),
       distance = countDown - now;
-    // document.getElementById('days').innerText = Math.floor(distance / (day)),
-    document.getElementById('hours').innerText = Math.floor(distance / (hour)),
+      document.getElementById('days').innerText = Math.floor(distance / (day)),
+      document.getElementById('hours').innerText = Math.floor(distance / (hour)),
       document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
       document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
 
@@ -40,10 +40,11 @@ const _slideSatu = function () {
   slideSatu.classList.remove('d-none');
   setTimeout(function () {
     tap.classList.remove('d-none');
+    document.body.addEventListener('click', playMusic, { once: true });
     document.body.addEventListener('click', function () {
       _slideDua();
     })
-  }, 7000);
+  }, 3000);
 };
 
 const _slideDua = function () {
@@ -71,7 +72,7 @@ const _slideDua = function () {
         _slideTiga();
       }, 1000);
     })
-  }, 40000);
+  }, 35000);
 };
 
 const _slideTiga = function () {
@@ -90,7 +91,7 @@ const _slideTiga = function () {
         _slideEmpat();
       }, 1000);
     })
-  }, 43000);
+  }, 22000);
 }
 
 function getRandomPosition(element) {
@@ -129,9 +130,9 @@ const _slideLima = function () {
   slideLima.classList.remove('d-none');
   const trims = document.getElementById('trims');
 
-  setTimeout(() => {
+  // setTimeout(() => {
     trims.classList.remove('d-none');
-  }, 1000);
+  // }, 1000);
 
   slideLima.addEventListener('animationend', () => {
     slideLima.classList.add('animate__delay-3s')
@@ -154,14 +155,14 @@ const _slideEnam = function () {
 
 
 new TypeIt("#teks1", {
-  strings: ["Hari ini, saya langitkan semua doa terbaik saya untuk kamu.", "Semoga hal-hal yang membuat kamu runtuh turut menjadi alasan kamu untuk tetap tumbuh.", "Semoga dunia senantiasa menjaga kamu dimanapun kamu berada.", "Semoga hari-hari kamu selalu diiringi cinta yang tak pernah ada batasnya." , "Semoga setiap langkahmu dimudahkan hingga tercapai apa yang kamu inginkan."],
+  strings: ["Hari ini, Mass langitkan semua doa terbaik mass untuk adee.", "Semoga hal-hal yang membuat adee runtuh turut menjadi alasan adee untuk tetap tumbuh.", "Semoga dunia senantiasa menjaga adee dimanapun adee berada.", "Semoga hari-hari nya selalu diiringi cinta yang tak pernah ada batasnya." , "Semoga setiap langkahmu dimudahkan hingga tercapai apa yang adee inginkan."],
   startDelay: 4000,
   speed: 75,
   waitUntilVisible: true
 }).go();
 
 new TypeIt("#teks2", {
-  strings: ["Dengan ataupun tanpaku, semoga semesta selalu membahagiakan kamu bagimanapun caranya.", " ", "barakallah fi umrik, terima kasih sudah bertahan sampai sejauh ini.", " ", "- Wish all you the best"],
+  strings: ["Dengan ataupun tanpa mass, semoga semesta selalu membahagiakan adee bagimanapun caranya.", " ", "Sealamat Ulang Tahun Sayangkuu 🥰❤️😘🎉, terima kasih sudah bertahan sampai sejauh ini.", " ", "- Wish all you the best😋😘🎉🎉"],
   startDelay: 2000,
   speed: 75,
   waitUntilVisible: true
@@ -169,10 +170,10 @@ new TypeIt("#teks2", {
 
 
 new TypeIt("#trims", {
-  strings: ["Terimakasih."],
+  strings: ["Terimakasih Sayang🥰😘❤️."],
   startDelay: 2000,
-  speed: 150,
-  loop: false,
+  // speed: 150,
+  // loop: false,
   waitUntilVisible: true,
 }).go();
 
